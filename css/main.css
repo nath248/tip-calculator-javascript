@@ -130,6 +130,11 @@ button:hover {
   color: black;
 }
 
+.calculator-end{
+  border: 4px solid #707070;
+  padding: 20px 10px;
+}
+
 
 /* ==========================================================================
    Helper classes
