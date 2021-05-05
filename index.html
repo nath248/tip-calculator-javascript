@@ -41,11 +41,11 @@
           <option value="0.1">10&#37; &#45; Okay</option>
         </select>
         <p>Are you splitting your bill? By how many people?</p>
-        <input type="text" id="bill-split" name="bill-split" placeholder="Number of People" required>
+        <input type="text" id="people" name="bill-split" placeholder="Number of People" required>
         <br>
         <button type="button" id="calculate" name="button">Calculate</button>
       </form>
-      <div class="calculator-end">
+      <div id="total-tip" class="calculator-end">
         <sup>$</sup><span id="tip">0.00</span>
         <small id="each">each</small>
       </div>
