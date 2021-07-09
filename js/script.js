@@ -1,15 +1,19 @@
   // Global variables
-  const billAmount = document.getElementById("bill-amount").value;
-  const tipPercentage = document.getElementById("service").value;
-  const numOfPeople = document.getElementById("people").value;
+  let billAmount = document.getElementById("bill-amount").value;
+  let tipPercentage = document.getElementById("service").value;
+  let numOfPeople = document.getElementById("people").value;
   const tipElement = document.getElementById("total-tip");
   const tipAmount = document.getElementById("tip");
   const each = document.getElementById("each");
 
   //validate input
-  const calculateTotal = function() {
-      if (billAmount === " " || tipPercentage === 0) {
+
+
+  const calculateTotal = document.getElementById("calculate");
+  calculateTotal.addEventListener("click", function() {
+      if (billAmount === " " || tipPercentage == 0) {
           alert("Please enter a value");
+          return;
       }
       if (numOfPeople === " " || numOfPeople <= 1) {
           numOfPeople = 1;
@@ -17,14 +21,16 @@
       } else {
           each.style.display = "block";
       }
-      const total = (billAmount * tipPercentage) / numOfPeople;
+      let total = (billAmount * tipPercentage) / numOfPeople;
       total = total.toFixed(2);
       console.log(total);
-
-      //Hide the tip amount on load
       tipElement.classList.add("calculator-end");
       tipElement.classList.remove("calculator-end");
       tipAmount.innerText = total;
-      // Call function
       calculateTotal();
-  };
+  });
+
+
+  //Hide the tip amount on load
+
+  // Call function
