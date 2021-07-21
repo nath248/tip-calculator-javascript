@@ -1,37 +1,26 @@
-  // Global variables
-  let billAmount = Number(document.getElementById("bill-amount").value);
-  let tipPercentage = document.getElementById("service").value;
-  let numOfPeople = document.getElementById("people").value;
-  const tipElement = document.getElementById("total-tip");
-  const tipAmount = document.getElementById("tip");
-  const each = document.getElementById("each");
+const button = document.querySelector("#calculate");
 
-  //validate input
+button.addEventListener("click", function() {
+    let billAmount = Number(document.getElementById("bill-amount").value);
+    let tipPercentage = document.getElementById("service").value;
+    let numOfPeople = Number(document.getElementById("people").value);
 
-
-  const calculateTotal = document.getElementById("calculate");
-  calculateTotal.addEventListener("click", function() {
-      if (billAmount === " " || tipPercentage == 0) {
-          alert("Please enter a value");
-          return;
-      }
-      if (numOfPeople === " " || numOfPeople <= 1) {
-          numOfPeople = 1;
-          each.style.display = "none";
-      } else {
-          each.style.display = "block";
-      }
-
-      let total = (billAmount * tipPercentage) / numOfPeople;
-      total = total.toFixed(2);
-
-      tipElement.classList.add("calculator-end");
-      tipElement.classList.remove("calculator-end");
-      tipAmount.innerText = total;
-      calculateTotal();
-  });
+    const tipElement = document.getElementById("total-tip");
+    const tip = document.getElementById("tip");
+    const totalWithTip = document.getElementById("totalWithTip")
 
 
-  //Hide the tip amount on load
-
-  // Call function
+    if (billAmount === " " || tipPercentage == 0) {
+        alert("Please enter a value");
+    };
+    if (numOfPeople === " " || numOfPeople <= 1) {
+        numOfPeople = 1;
+    } else {
+        let tipAmount = billAmount * (tipPercentage / 100);
+        let finalBill = (tipAmount + billAmount) / numOfPeople;
+        tipAmount = tipAmount.toFixed(2);
+        tipElement.style.display = "block";
+        tip.innerText = tipAmount;
+        totalWithTip.innerText = finalBill;
+    }
+});

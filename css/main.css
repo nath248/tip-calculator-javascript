@@ -55,6 +55,14 @@ button:hover {
     padding: 30px 10px;
 }
 
+.under {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 .calculator-end {
     display: none;
+    box-shadow: 10px 10px 10px black;
+    border-radius: 2px;
+    font-size: 16px;
 }

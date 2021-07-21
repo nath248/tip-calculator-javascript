@@ -15,7 +15,7 @@
         <h1>Tip Calculator</h1>
         <h2>Let's Calculate!</h2>
         <div class="calculator">
-            <form>
+            <form id="tip-form">
                 <p>How much is your bill?</p>
                 <input type="text" id="bill-amount" name="bill-amount" placeholder="Bill Amount" required>
                 <p>What would you rate your service?</p>
@@ -32,8 +32,10 @@
                 <button type="button" id="calculate" name="button">Calculate</button>
             </form>
             <div id="total-tip" class="calculator-end">
-                <sup>$</sup><span id="tip">0.00</span>
-                <small id="each">each</small>
+                <p> <span class="under">Tip:</span><sup>$</sup><span id="tip">0.00</span>
+                    <small>each</small></p>
+                <p> <span class="under">Total with Tip:</span><sup>$</sup><span id="totalWithTip">0.00</span>
+                    <small>each</small></p>
             </div>
 
         </div>
