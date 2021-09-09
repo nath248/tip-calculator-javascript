@@ -16,7 +16,7 @@ button.addEventListener("click", function() {
     if (numOfPeople === " " || numOfPeople <= 1) {
         numOfPeople = 1;
     } else {
-        let tipAmount = billAmount * (tipPercentage / 100);
+        let tipAmount = billAmount * tipPercentage;
         let finalBill = (tipAmount + billAmount) / numOfPeople;
         tipAmount = tipAmount.toFixed(2);
         tipElement.style.display = "block";
